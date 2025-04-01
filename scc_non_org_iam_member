@@ -1,0 +1,16 @@
+rule scc_non_org_iam_member {
+  meta:
+    author = "Nick Cheng"
+    description = "use for secops demo"
+    severity = "Medium"
+
+  events:
+    $e.metadata.product_name = "Security Command Center"
+    $e.metadata.product_event_type = "NON_ORG_IAM_MEMBER"
+
+  outcome:
+    $risk_score = 60
+
+  condition:
+    $e
+}
