@@ -1,0 +1,20 @@
+log_id("cloudaudit.googleapis.com/activity") OR --audit log
+log_id("cloudaudit.googleapis.com/data_access") OR 
+log_id("cloudaudit.googleapis.com/system_event") OR
+log_id("cloudaudit.googleapis.com/policy") OR --policy violation event logs such as VPC-SC
+log_id("cloudaudit.googleapis.com/access_transparency") OR --access log if Google Admin access customer data need to extra enable access transparency)
+log_id("compute.googleapis.com/nat_flows") OR --Cloud NAT Log
+log_id("dns.googleapis.com/dns_queries") OR
+log_id("compute.googleapis.com/firewall") OR
+log_id("networksecurity.googleapis.com/firewall_threat") OR --NGFW Enterprise (IPS) alert
+log_id("ids.googleapis.com/threat") OR --Cloud IDS alert
+log_id("requests") OR --LB/Cloud Armor WAF Log
+log_id("networksecurity.googleapis.com/network_dos_attack_mitigations") OR --DDoS Attack Alert
+log_id("networksecurity.googleapis.com/dos_attack") OR  --DDoS Attack Alert
+log_id("syslog") OR -- Linux VM event Log
+log_id("authlog") OR -- Linux VM event Log
+log_id("securelog") OR -- Linux VM event Log
+log_id("audit_log") OR -- Linux VM event Log
+log_id("sysmon.raw") OR -- Winddows VM event Log
+log_id("winevt.raw") OR -- Winddows VM event Log
+log_id("windows_event_log") -- Winddows VM event Log
