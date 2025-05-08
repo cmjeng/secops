@@ -3,7 +3,7 @@ log_id("cloudaudit.googleapis.com/data_access") OR
 log_id("cloudaudit.googleapis.com/system_event") OR
 log_id("cloudaudit.googleapis.com/policy") OR --policy violation event logs such as VPC-SC
 log_id("cloudaudit.googleapis.com/access_transparency") OR --access log if Google Admin access customer data need to extra enable access transparency)
-log_id("compute.googleapis.com/nat_flows") OR --Cloud NAT Log
+(log_id("compute.googleapis.com/nat_flows") AND resource.type="nat_gateway") OR --Cloud NAT Log
 log_id("dns.googleapis.com/dns_queries") OR
 log_id("compute.googleapis.com/firewall") OR
 log_id("networksecurity.googleapis.com/firewall_threat") OR --NGFW Enterprise (IPS) alert
